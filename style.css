@@ -1,0 +1,161 @@
+html{
+    font-family: 'Overpass', sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    line-height: 1.4;
+    background: rgba(0,0,0,0.9);
+    color: #fff;
+}
+
+img{
+    max-width: 100%;
+}
+
+.wrapper{
+    display: grid;
+}
+
+.header::after{
+    content: "";
+    height: 100vh;
+    width: 100%;
+    background-image: url(./media/showcase.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+    transition: all 1000ms;
+}
+
+.header:hover::after{
+    filter: blur(0px);
+    -webkit-filter: blur(0px);
+}
+
+.header:hover .content{
+    filter: blur(2px);
+    -webkit-filter: (2px);
+}
+
+.content{
+    position:absolute;
+    z-index: 1;
+    top: 10%;
+    left: 50%;
+    margin-top: 85px;
+    margin-left: -145px;
+    width: 300px;
+    height: 350px;
+    text-align: center;
+    transition: all 1000ms; 
+}
+
+.content .logo{
+    width: 180px;
+    height: 180px;
+}
+
+.content h2{
+    font-size: 2.2rem;
+    margin-top: 1rem;
+}
+
+.content p{
+    line-height: 1.7;
+    margin-top: 1rem;
+}
+
+
+.service{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.service .box{
+    padding: 3rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.about{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 40px;
+    background-color: #f4f4f4;
+}
+
+.about-image{
+    text-align: right;
+    padding: 4rem 4rem;
+}
+
+.about-text{
+    text-align: left;
+    color:black;
+    padding: 4rem 6rem;
+}
+
+footer{
+    text-align: center;
+}
+
+/* Media Queries */
+
+@media (max-width: 576px){
+    
+    .header::after{
+        height: 50vh;
+    }
+
+    .content{
+        top:5%;
+        margin-top: 5px;
+    }
+
+    .content .logo{
+        height: 120px;
+        width: 120px;
+    }
+
+    .content .h2{
+        display: none;
+    }
+
+    .content p{
+        display: none;
+    }
+
+    .service{
+        grid-template-columns: 1fr;
+    }
+
+    .service .box{
+        padding: 2rem 5rem;
+    }
+
+    .about{
+        grid-template-columns: 1fr;
+        grid-gap: 2px;
+    }
+
+    .about-image{
+        text-align: center;
+        padding: 2rem 0;
+
+    }
+
+    .about-text{
+        text-align: center;
+        padding: 2rem;
+    }
+
+}
